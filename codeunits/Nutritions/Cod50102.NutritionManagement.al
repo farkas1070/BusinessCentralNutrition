@@ -8,16 +8,16 @@ codeunit 50102 "Nutrition Management"
     end;
 
     procedure ConfirmStatusChange(var Rec: Record "Nutrition Header")
-    var 
-        ConfirmMessage : label 'Biztosan szeretné megváltoztatni a státuszt?';
+    var
+        ConfirmMessage: label 'Biztosan szeretné megváltoztatni a státuszt?';
         DeclineMessage: label 'Státuszváltoztatás megszakítva';
     begin
         if not Confirm(ConfirmMessage) then
-        Error(DeclineMessage)
+            Error(DeclineMessage)
     end;
 
     procedure PostOrder(var NutritionHeader: Record "Nutrition Header")
-    var 
+    var
         NutritionLine: Record "Nutrition Line";
         PostedNutritionHeader: Record "Posted Nutrition Header";
         PostedNutritionLine: Record "Posted Nutrition Line";
@@ -33,7 +33,7 @@ codeunit 50102 "Nutrition Management"
 
         if not Confirm(PostQuestion) then
             exit;
-         
+
         if Confirm(DeleteQuestion) then
             ShouldBeDeleted := true
         else
@@ -53,14 +53,14 @@ codeunit 50102 "Nutrition Management"
                 PostedNutritionLine.TransferFields(NutritionLine);
                 PostedNutritionLine."Nutritional No." := PostedNutritionHeader."Nutritional No.";
                 PostedNutritionLine.Insert(true);
-            
-            if ShouldBeDeleted then
-                NutritionLine.Delete();
+
+                if ShouldBeDeleted then
+                    NutritionLine.Delete();
             until NutritionLine.Next() = 0;
 
         if ShouldBeDeleted then
             NutritionHeader.Delete();
-        
+
         Commit();
         Message(ExitMessage);
         Page.RunModal(Page::"Posted Nutrition Order", PostedNutritionHeader);
@@ -71,11 +71,10 @@ codeunit 50102 "Nutrition Management"
         Setup: Record "No. Series Setup";
         NoMgmt: Codeunit NoSeriesManagement;
     begin
-        if NutritionHeader."Nutritional No." = '' then
-        begin
+        if NutritionHeader."Nutritional No." = '' then begin
             Setup.Get();
             NutritionHeader."Nutritional No." := NoMgmt.GetNextNo(Setup."No. Series for Nutr Orders", WorkDate(), true);
         end;
-        
+
     end;
 }
