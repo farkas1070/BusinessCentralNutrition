@@ -1,3 +1,5 @@
+
+// összes order test
 page 50100 "SOE Test Orders"
 {
     ApplicationArea = All;
@@ -7,7 +9,7 @@ page 50100 "SOE Test Orders"
     UsageCategory = Lists;
     Editable = false;
     CardPageId = "SOE Test Order";
-    
+
     layout
     {
         area(content)

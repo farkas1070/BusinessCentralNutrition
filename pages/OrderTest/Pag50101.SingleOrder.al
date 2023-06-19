@@ -1,9 +1,11 @@
+
+// Order Gyakorlás
 page 50101 "SOE Test Order"
 {
     Caption = 'SOE Test Order';
     PageType = Document;
     SourceTable = "SOE Test Header";
-    
+
     layout
     {
         area(content)
@@ -30,21 +32,26 @@ page 50101 "SOE Test Order"
                 {
                     ApplicationArea = All;
                 }
-                field(Status;Rec.Status){
+                field(Status; Rec.Status)
+                {
                     ApplicationArea = All;
                     Editable = false;
                 }
             }
-            part(Lines; "SOE Test Order Subform"){
+            part(Lines; "SOE Test Order Subform")
+            {
                 SubPageLink = "Document No." = field("Document No.");
                 ApplicationArea = All;
             }
         }
     }
-    actions{
+    actions
+    {
 
-        area(Processing){
-            action(ChangeStatus){
+        area(Processing)
+        {
+            action(ChangeStatus)
+            {
                 Caption = 'Change Status';
                 Image = Stages;
                 ApplicationArea = All;
@@ -59,7 +66,8 @@ page 50101 "SOE Test Order"
                     SOETestManagement.ChangeStatus(Rec, Rec.Status::Released)
                 end;
             }
-            action(Reopen){
+            action(Reopen)
+            {
                 Caption = 'Reopen';
                 Image = Stages;
                 ApplicationArea = All;
@@ -81,6 +89,7 @@ page 50101 "SOE Test Order"
         PageEditable := Rec.Status = Rec.Status::Open;
         CurrPage.Editable(PageEditable)
     end;
+
     var
         PageEditable: Boolean;
         SOETestManagement: Codeunit "SOE Test Management";

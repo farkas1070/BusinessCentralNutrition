@@ -1,6 +1,7 @@
+//codeunit és procedúra gyakorlás
 codeunit 50100 "SOE Test Management"
 {
-    
+
 
     internal procedure ChangeStatus(TestHeader: Record "SOE Test Header"; Status: Enum "Sales Document Status")
     begin

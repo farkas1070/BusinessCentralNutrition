@@ -12,6 +12,6 @@ codeunit 50103 "Nutrition Order Page Handler"
         NM.ConfirmStatusChange(Rec);
     end;
 
-    var 
-        NM: Codeunit "Nutrition Management"; 
+    var
+        NM: Codeunit "Nutrition Management";
 }

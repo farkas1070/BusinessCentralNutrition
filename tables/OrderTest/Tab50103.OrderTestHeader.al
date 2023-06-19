@@ -1,8 +1,10 @@
+
+//header tesztelés
 table 50103 "SOE Test Header"
 {
     Caption = 'SOE Test Header';
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Document No."; Code[20])
@@ -41,7 +43,8 @@ table 50103 "SOE Test Header"
             Caption = 'Created DateTime';
             DataClassification = CustomerContent;
         }
-        field(6; "Status"; enum "Sales Document Status"){
+        field(6; "Status"; enum "Sales Document Status")
+        {
             Caption = 'Status';
             ValuesAllowed = 0, 1;
             DataClassification = CustomerContent;

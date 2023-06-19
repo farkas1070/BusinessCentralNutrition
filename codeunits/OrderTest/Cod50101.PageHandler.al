@@ -1,11 +1,13 @@
+//codeunit és event handler gyakorlás
 codeunit 50101 "SOE Test Order Page Handler"
 {
-    
+
     [EventSubscriber(ObjectType::Page, Page::"SOE Test Order", 'OnBeforeActionEvent', 'ChangeStatus', false, false)]
     local procedure OnBeforeActionEvent_ChangeStatus(var Rec: Record "SOE Test Header")
     begin
-        
+
     end;
-    var 
+
+    var
         SOETestManagement: Codeunit "SOE Test Management";
 }

@@ -1,8 +1,11 @@
+
+
+//sor tesztelés
 table 50104 "SOE Test Line"
 {
     Caption = 'SOE Test Line';
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Document No."; Code[20])
@@ -22,7 +25,7 @@ table 50104 "SOE Test Line"
             DataClassification = CustomerContent;
             TableRelation = Item."No.";
             trigger OnValidate()
-            var 
+            var
                 Item: Record Item;
             begin
                 if Item.Get(Rec."Item No.") then
