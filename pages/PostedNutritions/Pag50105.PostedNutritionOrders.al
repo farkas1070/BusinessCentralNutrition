@@ -1,3 +1,5 @@
+
+//Könyvelt Táplálkozások
 page 50105 "Posted Nutrition Orders"
 {
     ApplicationArea = All;
@@ -7,7 +9,7 @@ page 50105 "Posted Nutrition Orders"
     UsageCategory = History;
     Editable = false;
     CardPageId = "Posted Nutrition Order";
-    
+
     layout
     {
         area(content)

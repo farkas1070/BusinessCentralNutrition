@@ -1,12 +1,15 @@
+
+//Táplálkozás manager codeunit.
 codeunit 50102 "Nutrition Management"
 {
+    //státusz megváltoztatása
     procedure ChangeStatus(NutrtionHeader: Record "Nutrition Header"; Status: Enum "Nutrition Document Status")
     begin
         NutrtionHeader.TestField(NutrtionHeader."Customer No.");
         NutrtionHeader.Status := Status;
         NutrtionHeader.Modify();
     end;
-
+    //státusz változtatásának megerősítése
     procedure ConfirmStatusChange(var Rec: Record "Nutrition Header")
     var
         ConfirmMessage: label 'Biztosan szeretné megváltoztatni a státuszt?';
@@ -16,6 +19,7 @@ codeunit 50102 "Nutrition Management"
             Error(DeclineMessage)
     end;
 
+    //Order posztolása
     procedure PostOrder(var NutritionHeader: Record "Nutrition Header")
     var
         NutritionLine: Record "Nutrition Line";
@@ -66,6 +70,7 @@ codeunit 50102 "Nutrition Management"
         Page.RunModal(Page::"Posted Nutrition Order", PostedNutritionHeader);
     end;
 
+    //Új series number kérése a no.series setup segítségével
     procedure GetNewSeriesNumber(var NutritionHeader: Record "Nutrition Header")
     var
         Setup: Record "No. Series Setup";

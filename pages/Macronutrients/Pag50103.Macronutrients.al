@@ -1,3 +1,5 @@
+
+//Makronutrient oldal
 page 50103 "Macronutrients"
 {
     ApplicationArea = All;
@@ -7,7 +9,7 @@ page 50103 "Macronutrients"
     UsageCategory = Lists;
     Editable = false;
     CardPageId = "Macronutrient Entry";
-    
+
     layout
     {
         area(content)

@@ -1,6 +1,9 @@
+
+//Page handler codeunit
 codeunit 50103 "Nutrition Order Page Handler"
 {
     [EventSubscriber(ObjectType::Page, Page::"Nutrition Order", 'OnBeforeActionEvent', 'Release', false, false)]
+    // event handler és megerősítések beállítása
     local procedure OnBeforeActionEvent_ConfirmRelease(var Rec: Record "Nutrition Header")
     begin
         NM.ConfirmStatusChange(Rec);

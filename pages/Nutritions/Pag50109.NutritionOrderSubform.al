@@ -1,10 +1,12 @@
+
+//A tálpálkozás subformja
 page 50109 "Nutrition Order Subform"
 {
     Caption = 'Nutrition Order Subform';
     PageType = ListPart;
     SourceTable = "Nutrition Line";
     AutoSplitKey = true;
-    
+
     layout
     {
         area(content)
@@ -15,14 +17,14 @@ page 50109 "Nutrition Order Subform"
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    
+
                 }
                 field("Serial No."; Rec."Serial No.")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
                     Editable = false;
-                    
+
                 }
                 field("Nutrition Code"; Rec."Nutrition Code")
                 {

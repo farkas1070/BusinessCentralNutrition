@@ -1,10 +1,12 @@
+
+//Könyvelt Táplálkozás (1)
 page 50111 "Posted Nutrition Order"
 {
     Caption = 'Posted Nutrition Order';
     PageType = Document;
     SourceTable = "Posted Nutrition Header";
     Editable = false;
-    
+
     layout
     {
         area(content)
@@ -52,16 +54,20 @@ page 50111 "Posted Nutrition Order"
                     ApplicationArea = All;
                 }
             }
-            part(Lines; "Posted Nutrition Order Subform"){
+            part(Lines; "Posted Nutrition Order Subform")
+            {
                 SubPageLink = "Nutritional No." = field("Nutritional No.");
                 ApplicationArea = All;
             }
         }
     }
-    actions{
-        area(Processing){
-            action("Create report"){
-    
+    actions
+    {
+        area(Processing)
+        {
+            action("Create report")
+            {
+
                 Caption = 'Report készítése';
                 Image = Report;
                 ApplicationArea = All;
@@ -76,5 +82,5 @@ page 50111 "Posted Nutrition Order"
                 end;
             }
         }
-    }    
+    }
 }

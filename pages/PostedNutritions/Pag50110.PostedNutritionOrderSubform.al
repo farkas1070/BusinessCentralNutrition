@@ -1,10 +1,12 @@
+
+//Könyvelt Táplálkozások subformja
 page 50110 "Posted Nutrition Order Subform"
 {
     Caption = 'Posted Nutrition Subform';
     PageType = ListPart;
     SourceTable = "Posted Nutrition Line";
     Editable = false;
-    
+
     layout
     {
         area(content)

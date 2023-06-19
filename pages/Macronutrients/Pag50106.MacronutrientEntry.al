@@ -1,9 +1,11 @@
+
+//Makronutrient felviteli oldal
 page 50106 "Macronutrient Entry"
 {
     Caption = 'Macronutrient Entry';
     PageType = Card;
     SourceTable = Macronutrients;
-    
+
     layout
     {
         area(content)

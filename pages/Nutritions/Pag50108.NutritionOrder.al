@@ -1,9 +1,11 @@
+
+//Egy táplálkozás page
 page 50108 "Nutrition Order"
 {
     Caption = 'Nutrition Order';
     PageType = Document;
     SourceTable = "Nutrition Header";
-    
+
     layout
     {
         area(content)
@@ -64,15 +66,19 @@ page 50108 "Nutrition Order"
                     Editable = false;
                 }
             }
-            part(Lines; "Nutrition Order Subform"){
+            part(Lines; "Nutrition Order Subform")
+            {
                 SubPageLink = "Nutritional No." = field("Nutritional No.");
                 ApplicationArea = All;
             }
         }
     }
-    actions{
-         area(Processing){
-            action(Release){
+    actions
+    {
+        area(Processing)
+        {
+            action(Release)
+            {
                 Caption = 'Lezár';
                 Image = Stages;
                 ApplicationArea = All;
@@ -85,7 +91,8 @@ page 50108 "Nutrition Order"
                     NM.ChangeStatus(Rec, Rec.Status::Released);
                 end;
             }
-            action(Reopen){
+            action(Reopen)
+            {
                 Caption = 'Újranyit';
                 Image = Stages;
                 ApplicationArea = All;
@@ -98,7 +105,8 @@ page 50108 "Nutrition Order"
                     NM.ChangeStatus(Rec, Rec.Status::Open);
                 end;
             }
-            action("Export to XML"){
+            action("Export to XML")
+            {
                 Caption = 'Exportálás XML-ként';
                 Image = Export;
                 ApplicationArea = All;
@@ -113,7 +121,8 @@ page 50108 "Nutrition Order"
                     Xmlport.Run(50100, false, false, Rec);
                 end;
             }
-            action("Post Document"){
+            action("Post Document")
+            {
                 Caption = 'Rendelés könyvelése';
                 Image = Post;
                 ApplicationArea = All;
@@ -134,7 +143,8 @@ page 50108 "Nutrition Order"
         PageEditable := Rec.Status = Rec.Status::Open;
         CurrPage.Editable(PageEditable)
     end;
+
     var
-    PageEditable: Boolean;
-    NM : Codeunit "Nutrition Management";
+        PageEditable: Boolean;
+        NM: Codeunit "Nutrition Management";
 }

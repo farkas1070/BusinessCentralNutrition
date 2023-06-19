@@ -1,3 +1,5 @@
+
+// tálpálkozások 
 page 50107 "Nutrition Orders"
 {
     ApplicationArea = All;
@@ -7,7 +9,7 @@ page 50107 "Nutrition Orders"
     UsageCategory = Lists;
     Editable = false;
     CardPageId = "Nutrition Order";
-    
+
     layout
     {
         area(content)
