@@ -2,7 +2,7 @@ table 50105 "No. Series Setup"
 {
     Caption = 'No. Series Setup';
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Code"; Code[10])

@@ -5,7 +5,7 @@ page 50104 "No. Series Setup"
     SourceTable = "No. Series Setup";
     UsageCategory = Administration;
     ApplicationArea = All;
-    
+
     layout
     {
         area(content)
